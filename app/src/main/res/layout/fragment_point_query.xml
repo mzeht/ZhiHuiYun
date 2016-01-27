@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin_20"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="公司编号"/>
+
+            <EditText
+                android:id="@+id/company_code_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入公司编号"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="设备编码"/>
+
+            <EditText
+                android:id="@+id/device_code_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint='请输入设备编码'
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="表记编码"/>
+
+            <EditText
+                android:id="@+id/meter_code_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入表记编码"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="量测编码"/>
+
+            <EditText
+                android:id="@+id/meas_code_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入量测编码"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="开始时间"/>
+
+            <EditText
+                android:id="@+id/begin_time_editext"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入开始时间"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="结束时间"/>
+
+            <EditText
+                android:id="@+id/end_time_editext"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入结束时间"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_line"/>
+
+
+        />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_head_height"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/view_margin"
+        android:background="@color/colorPrimary"
+        android:text="提交"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

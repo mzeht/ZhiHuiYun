@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/company_register"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="公司注册" />
+        <item
+            android:id="@+id/get_dic"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="获取字典" />
+        <item
+            android:id="@+id/area_data"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="区域数据" />
+        <item
+            android:id="@+id/dev_data"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="设备数据" />
+        <item
+            android:id="@+id/meter_data"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="表记数据" />
+        <item
+            android:id="@+id/meas_data"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="量测数据" />
+        <item
+            android:id="@+id/point_data"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="数据点" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
