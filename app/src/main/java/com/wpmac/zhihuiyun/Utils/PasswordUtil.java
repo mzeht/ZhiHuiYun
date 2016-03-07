@@ -105,7 +105,6 @@ public class PasswordUtil {
             .toCharArray();
 
     static private byte[] codes = new byte[256];
-
     static {
         for (int i = 0; i < 256; i++)
             codes[i] = -1;

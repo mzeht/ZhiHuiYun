@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    >
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
@@ -13,6 +15,7 @@
         app:tabSelectedTextColor="@color/B_black"
         app:tabIndicatorColor="@color/color_gray"
         app:tabTextColor="@color/white"
+        app:layout_scrollFlags="scroll|enterAlways"
         android:background="@color/colorPrimary"
     />
 
@@ -20,6 +23,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/groups_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    />
 
 </LinearLayout>

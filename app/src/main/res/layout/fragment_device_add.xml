@@ -3,9 +3,13 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-                android:background="@color/white">
+                android:background="@color/white"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+
+>
     <ScrollView android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+    android:layout_above="@+id/submit_button">
 
 
 
@@ -13,7 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/view_margin_20"
-
         android:orientation="vertical">
 
         <View
@@ -243,6 +246,124 @@
 
             <EditText
                 android:id="@+id/form_7_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入设备类型（1-20）"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="设备类型"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入设备类型（1-20）"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="设备类型"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入设备类型（1-20）"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="设备类型"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/to_right_icon"
+                android:gravity="center_vertical|right"
+                android:hint="请输入设备类型（1-20）"
+                android:paddingLeft="@dimen/view_padding_10"
+                android:paddingRight="@dimen/view_padding_10"
+                android:textColorHint="@color/color_gray999"
+                android:textSize="16sp">
+            </EditText>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_line"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_head_height">
+
+            <TextView
+                style="@style/FORM_INFO"
+                android:text="设备类型"/>
+
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_alignParentRight="true"

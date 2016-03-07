@@ -183,8 +183,8 @@ public class LoginActivity extends AppCompatActivity {
         param.loginId=Constants.LOGINID;
         String password=mPasswordView.getText().toString();
         String encpwd=PasswordUtil.getEncPwd(Constants.LOGINID, password);
-//        param.password= encpwd;
-        param.password= password;
+        param.password= encpwd;
+//        param.password= password;
         L.i("systemID",mUsernameView.getText().toString());
         L.i("明文密码",mPasswordView.getText().toString());
         L.i("loginID",Constants.LOGINID);

@@ -87,16 +87,16 @@ public class DeviceAddFragment extends Fragment {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s1=companyCodeEdittext.getText().toString().trim();
-                String error="";
-                if(s1.length()==0){
-                    error=error+"\r\n"+"公司编码不能为空";
+                String s1 = companyCodeEdittext.getText().toString().trim();
+                String error = "";
+                if (s1.length() == 0) {
+                    error = error + "\r\n" + "公司编码不能为空";
                 }
 
-                if(error.length()==0){
+                if (error.length() == 0) {
                     postDeviceAdd();
-                }else{
-                    Toast.makeText(getActivity(),error,Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -104,28 +104,28 @@ public class DeviceAddFragment extends Fragment {
     }
 
     private void postDeviceAdd() {
-        if(dialog==null){
-            dialog=new DialogWidget().createDialog(getActivity());
+        if (dialog == null) {
+            dialog = new DialogWidget().createDialog(getActivity());
             dialog.setCanceledOnTouchOutside(false);
             dialog.show();
         }
         DeviceAddParam param = new DeviceAddParam();
-        PostDeviceAddBean deviceAddBean= new PostDeviceAddBean();
-        deviceAddBean.companyCode=companyCodeEdittext.getText().toString().trim();
-        deviceAddBean.device=new Device();
-        deviceAddBean.device.code=deviceCodeEdittext.getText().toString().trim();
-        deviceAddBean.device.name=deviceNameEdittext.getText().toString().trim();
-        deviceAddBean.device.area=areaCodeEditText.getText().toString().trim();
-        deviceAddBean.device.locationLat=longitudeEdittext.getText().toString().trim();
-        deviceAddBean.device.locationLon=latitudeEdittext.getText().toString().trim();
-        if(isAllowControlCheckbox.isChecked()){
-            deviceAddBean.device.allowControl="true";
-        }else{
-            deviceAddBean.device.allowControl="false";
+        PostDeviceAddBean deviceAddBean = new PostDeviceAddBean();
+        deviceAddBean.companyCode = companyCodeEdittext.getText().toString().trim();
+        deviceAddBean.device = new Device();
+        deviceAddBean.device.code = deviceCodeEdittext.getText().toString().trim();
+        deviceAddBean.device.name = deviceNameEdittext.getText().toString().trim();
+        deviceAddBean.device.area = areaCodeEditText.getText().toString().trim();
+        deviceAddBean.device.locationLat = longitudeEdittext.getText().toString().trim();
+        deviceAddBean.device.locationLon = latitudeEdittext.getText().toString().trim();
+        if (isAllowControlCheckbox.isChecked()) {
+            deviceAddBean.device.allowControl = "true";
+        } else {
+            deviceAddBean.device.allowControl = "false";
         }
-        deviceAddBean.device.type=deviceTypeEdittext.getText().toString().trim();
-        String json= new Gson().toJson(deviceAddBean);
-        ConnectManager.getInstance().PostDeviceAdd(param,json,callback);
+        deviceAddBean.device.type = deviceTypeEdittext.getText().toString().trim();
+        String json = new Gson().toJson(deviceAddBean);
+        ConnectManager.getInstance().PostDeviceAdd(param, json, callback);
 
 
     }
@@ -133,7 +133,7 @@ public class DeviceAddFragment extends Fragment {
     private AbstractRequestListener<SimpleResponseBean> callback = new AbstractRequestListener<SimpleResponseBean>() {
         @Override
         public void onComplete(SimpleResponseBean bean) {
-            simpleResponseBean=bean;
+            simpleResponseBean = bean;
             mHandler.sendEmptyMessage(ActivityForResultUtil.REQUEST_DATA_SUCCESS);
         }
 
@@ -150,24 +150,24 @@ public class DeviceAddFragment extends Fragment {
         public void onFault(CustomError fault) {
             Message msg = mHandler.obtainMessage();
             msg.obj = fault;
-            msg.what=ActivityForResultUtil.REQUEST_DATA_FAULT;
+            msg.what = ActivityForResultUtil.REQUEST_DATA_FAULT;
             mHandler.sendMessage(msg);
 
         }
     };
 
-    Handler mHandler= new Handler(){
+    Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
 
-            switch (msg.what){
+            switch (msg.what) {
 
 
                 case ActivityForResultUtil.REQUEST_DATA_SUCCESS:
                     if (dialog != null && dialog.isShowing()) {
                         dialog.dismiss();
                     }
-                    Toast.makeText(getActivity(),simpleResponseBean.getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), simpleResponseBean.getMessage(), Toast.LENGTH_SHORT).show();
                     break;
 
                 case ActivityForResultUtil.REQUEST_DATA_ERROR:

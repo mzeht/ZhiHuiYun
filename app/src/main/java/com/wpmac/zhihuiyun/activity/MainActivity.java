@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.wpmac.zhihuiyun.R;
 import com.wpmac.zhihuiyun.fragment.AreaFragmnet;
@@ -25,8 +27,12 @@ import com.wpmac.zhihuiyun.fragment.MeasFragment;
 import com.wpmac.zhihuiyun.fragment.MetersFragment;
 import com.wpmac.zhihuiyun.fragment.PointsFragment;
 
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+         {
     private int mCurrentMenu;
     private CompanyFragment companyFragment;
     private GitDicFrafment gitDicFrafment;
@@ -75,9 +81,15 @@ public class MainActivity extends AppCompatActivity
 
     private void replaceMainFragment(Fragment fragment) {
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction()
-                .replace(R.id.main_container, fragment)
-                .commit();
+        if(fragment.isAdded()){
+            Toast.makeText(getApplicationContext(),"isadded",Toast.LENGTH_SHORT).show();
+
+        }else{
+
+            manager.beginTransaction()
+                    .replace(R.id.main_container, fragment)
+                    .commit();
+        }
     }
 
     private void switchFragment(int menuId) {
@@ -184,28 +196,70 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+//    @SuppressWarnings("StatementWithEmptyBody")
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        // Handle navigation view item clicks here.
+//        int id = item.getItemId();
+//
+//        if (id == R.id.company_register) {
+//            // Handle the camera action
+//        } else if (id == R.id.get_dic) {
+//
+//        } else if (id == R.id.area_data) {
+//
+//        } else if (id == R.id.dev_data) {
+//
+//        } else if (id == R.id.meter_data) {
+//
+//        } else if (id == R.id.meas_data) {
+//
+//        }
+//
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
+
+
+    // 双击退出函数
+    /**
+     * 菜单、返回键响应
+     */
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
 
-        if (id == R.id.company_register) {
-            // Handle the camera action
-        } else if (id == R.id.get_dic) {
-
-        } else if (id == R.id.area_data) {
-
-        } else if (id == R.id.dev_data) {
-
-        } else if (id == R.id.meter_data) {
-
-        } else if (id == R.id.meas_data) {
-
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN) {
+            exitByDoubleClick(); // 调用双击退出函数
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    /**
+     * 双击退出函数
+     */
+    private static Boolean isExit = false;
+
+    private void exitByDoubleClick() {
+        Timer tExit = null;
+        if (isExit == false) {
+            isExit = true; // 准备退出
+            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+            tExit = new Timer();
+            tExit.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    isExit = false; // 取消退出
+                }
+            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
+
+        } else {
+            List<Fragment> list = getSupportFragmentManager().getFragments();
+            finish();
+            System.exit(0);
+        }
+    }
+
+
 }
