@@ -92,7 +92,7 @@ public class GroupsPagerAdapter extends FragmentPagerAdapter {
                 return PointUpdateFragment.getInstance();
             case GroupHelper.POINT_UPLOAD:
                 return PointUploadFragment.getInstance();
-            case GroupHelper.PONINT_DELETE:
+            case GroupHelper.POINT_DELETE:
                 return PointDeleteFragment.getInstance();
 
             default:

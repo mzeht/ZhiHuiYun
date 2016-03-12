@@ -51,7 +51,7 @@ public class PointsFragment extends Fragment {
         adapter.addCategory(GroupHelper.POINT_UPLOAD);
         adapter.addCategory(GroupHelper.POINT_UPDATE);
         adapter.addCategory(GroupHelper.POINT_QUERY);
-        adapter.addCategory(GroupHelper.PONINT_DELETE);
+        adapter.addCategory(GroupHelper.POINT_DELETE);
         adapter.addCategory(GroupHelper.POINT_CHECK);
         viewPager.setAdapter(adapter);
     }

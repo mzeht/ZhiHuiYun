@@ -43,7 +43,7 @@ public class GroupHelper {
 
     public static final String POINT_UPDATE = "数据点修改";
 
-    public static final String PONINT_DELETE = "数据点删除";
+    public static final String POINT_DELETE = "数据点删除";
 
     public static final String POINT_QUERY = "数据点查询";
 
